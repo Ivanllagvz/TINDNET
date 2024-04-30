@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">TINDNET</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="open" />
+    <string name="close" />
+    <string name="Bienvenida">Bienvenid@, para ingresar a la aplicación debe iniciar sesión,
+    y en caso de no disponer de una cuenta deberá registrarse.</string>
+    <string name="LoginBTN">Inicio de sesión</string>
+    <string name="RegisterBTN">Registro</string>
 </resources>
