@@ -1,34 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/fondo"
     android:orientation="vertical"
-    tools:context=".ui.login.LoginFragment">
+    tools:context=".ui.home.HomeFragment">
+
+    <ImageView
+        android:id="@+id/Banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/tindnet" />
+
+    <ImageView
+        android:id="@+id/fondo"
+        android:layout_width="match_parent"
+        android:layout_height="614dp"
+        android:alpha="0.8"
+        android:scaleType="centerCrop"
+        android:src="@drawable/oficina" />
 
     <TextView
         android:id="@+id/instruccion"
-        android:layout_width="356dp"
-        android:layout_height="102dp"
+        android:layout_width="wrap_content"
+        android:layout_height="117dp"
         android:layout_gravity="center"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="15dp"
-        android:background="@drawable/borde_redondeado_plata"
+        android:background="@drawable/borde_redondeado"
         android:fontFamily="sans-serif"
         android:padding="15dp"
-        android:text="@string/Instruccion"
+        android:text="@string/Bienvenida"
         android:textColor="@color/white"
         android:textSize="16sp"
-        android:translationY="60dp" />
+        android:translationY="-600dp" />
 
     <Button
-        android:id="@+id/BTNLoginUsuario"
-        android:layout_width="179dp"
-        android:layout_height="100dp"
+        android:id="@+id/BTNLogin"
+        android:layout_width="190dp"
+        android:layout_height="63dp"
         android:layout_gravity="center"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
@@ -37,16 +51,16 @@
         android:backgroundTint="@color/componentes"
         android:fontFamily="@font/montserrat"
         android:padding="15dp"
-        android:text="@string/BTN_LoginUsuario"
+        android:text="@string/BTN_login"
         android:textColor="@color/white"
         android:textSize="15sp"
-        android:translationY="100dp"
+        android:translationY="-540dp"
         app:cornerRadius="10dp" />
 
     <Button
-        android:id="@+id/BTNLoginEmpresa"
-        android:layout_width="179dp"
-        android:layout_height="100dp"
+        android:id="@+id/BTNRegister"
+        android:layout_width="147dp"
+        android:layout_height="63dp"
         android:layout_gravity="center"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
@@ -55,9 +69,10 @@
         android:backgroundTint="@color/componentes"
         android:fontFamily="@font/montserrat"
         android:padding="15dp"
-        android:text="@string/BTN_LoginEmpresa"
+        android:text="@string/BTN_register"
         android:textColor="@color/white"
         android:textSize="15sp"
-        android:translationY="150dp"
+        android:translationY="-500dp"
         app:cornerRadius="10dp" />
+
 </LinearLayout>

@@ -3,15 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/fondo"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".ui.login.LoginFragment">
+    tools:context=".ui.register.RegisterFragment">
 
     <TextView
-        android:id="@+id/instruccion"
+        android:id="@+id/instruccionRegister"
         android:layout_width="356dp"
-        android:layout_height="102dp"
+        android:layout_height="119dp"
         android:layout_gravity="center"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
@@ -20,15 +20,15 @@
         android:background="@drawable/borde_redondeado_plata"
         android:fontFamily="sans-serif"
         android:padding="15dp"
-        android:text="@string/Instruccion"
+        android:text="@string/InstruccionRegister"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:translationY="60dp" />
 
     <Button
-        android:id="@+id/BTNLoginUsuario"
+        android:id="@+id/BTNRegisterUsuario"
         android:layout_width="179dp"
-        android:layout_height="100dp"
+        android:layout_height="101dp"
         android:layout_gravity="center"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
@@ -37,27 +37,28 @@
         android:backgroundTint="@color/componentes"
         android:fontFamily="@font/montserrat"
         android:padding="15dp"
-        android:text="@string/BTN_LoginUsuario"
+        android:text="@string/BTN_RegisterUsuario"
         android:textColor="@color/white"
         android:textSize="15sp"
         android:translationY="100dp"
         app:cornerRadius="10dp" />
 
-    <Button
-        android:id="@+id/BTNLoginEmpresa"
-        android:layout_width="179dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="15dp"
-        android:backgroundTint="@color/componentes"
-        android:fontFamily="@font/montserrat"
-        android:padding="15dp"
-        android:text="@string/BTN_LoginEmpresa"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        android:translationY="150dp"
-        app:cornerRadius="10dp" />
+<Button
+android:id="@+id/BTNRegisterEmpresa"
+android:layout_width="179dp"
+android:layout_height="100dp"
+android:layout_gravity="center"
+android:layout_marginLeft="15dp"
+android:layout_marginTop="15dp"
+android:layout_marginRight="15dp"
+android:layout_marginBottom="15dp"
+android:backgroundTint="@color/componentes"
+android:fontFamily="@font/montserrat"
+android:padding="15dp"
+android:text="@string/BTN_RegisterEmpresa"
+android:textColor="@color/white"
+android:textSize="15sp"
+android:translationY="150dp"
+app:cornerRadius="10dp" />
+
 </LinearLayout>

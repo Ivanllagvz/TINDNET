@@ -1,9 +1,26 @@
 <resources>
     <string name="app_name">TINDNET</string>
-    <string name="open" />
-    <string name="close" />
-    <string name="Bienvenida">Bienvenid@, para ingresar a la aplicación debe iniciar sesión,
-    y en caso de no disponer de una cuenta deberá registrarse.</string>
-    <string name="LoginBTN">Inicio de sesión</string>
-    <string name="RegisterBTN">Registro</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_home">Inicio</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="Bienvenida">Bienvenid@! Para hacer uso de nuestros servicios, deberá iniciar sesión, si por el contrario no dispone de una cuenta, regístrese.</string>
+    <string name="BTN_login">Inicio sesión</string>
+    <string name="BTN_register">Registro</string>
+    <string name="inicio">Inicio</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu_login">Inicio sesión</string>
+    <string name="menu_register">Registro</string>
+    <string name="Instruccion">En esta ventana, usted deberá elegir como iniciar sesión depende su finalidad con esta aplicación.</string>
+    <string name="InstruccionRegister">En esta ventana, usted deberá elegir como desea registrarse, dependiendo que use le vaya a dar a nuestros servicios.</string>
+    <string name="BTN_LoginUsuario">Inicio sesión como usuario</string>
+    <string name="BTN_LoginEmpresa">Inicio sesión como empresa</string>
+    <string name="tindnet">TINDNET</string>
+    <string name="BTN_RegisterUsuario">Registro como usuario</string>
+    <string name="BTN_RegisterEmpresa">Registro como empresa</string>
 </resources>
