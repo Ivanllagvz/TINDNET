@@ -1,11 +1,15 @@
 package com.example.tindnet;
 
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import com.google.android.material.navigation.NavigationView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
@@ -37,7 +41,9 @@ public class MainActivity extends AppCompatActivity {
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home,
                 R.id.nav_login,
-                R.id.nav_register)
+                R.id.nav_register,
+                R.id.nav_regusuario,
+                R.id.nav_logusuario)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
@@ -67,9 +73,11 @@ public class MainActivity extends AppCompatActivity {
 
         navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
             @Override
-            public void onDestinationChanged(NavController controller, NavDestination destination, Bundle arguments) {
+            public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
                 if (destination.getId() == R.id.nav_home) {
                     tituloTindnet.setVisibility(View.GONE);
+                    Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.fondo)));
+                    tituloTindnet.setBackgroundColor(getResources().getColor(R.color.fondo));
                 } else {
                     tituloTindnet.setVisibility(View.VISIBLE);
                 }
@@ -91,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                || super.onSupportNavigateUp();
+        return navController.navigateUp() || super.onSupportNavigateUp();
     }
+
 }

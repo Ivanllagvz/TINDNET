@@ -17,7 +17,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="15dp"
-        android:background="@drawable/borde_redondeado_plata"
+        android:background="@drawable/borde_redondeado"
         android:fontFamily="sans-serif"
         android:padding="15dp"
         android:text="@string/Instruccion"

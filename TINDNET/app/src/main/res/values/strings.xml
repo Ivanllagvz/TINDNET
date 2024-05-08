@@ -16,6 +16,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="menu_login">Inicio sesión</string>
     <string name="menu_register">Registro</string>
+    <string name="menu_regusuario">Registro usuario</string>
     <string name="Instruccion">En esta ventana, usted deberá elegir como iniciar sesión depende su finalidad con esta aplicación.</string>
     <string name="InstruccionRegister">En esta ventana, usted deberá elegir como desea registrarse, dependiendo que use le vaya a dar a nuestros servicios.</string>
     <string name="BTN_LoginUsuario">Inicio sesión como usuario</string>
@@ -23,4 +24,14 @@
     <string name="tindnet">TINDNET</string>
     <string name="BTN_RegisterUsuario">Registro como usuario</string>
     <string name="BTN_RegisterEmpresa">Registro como empresa</string>
+    <string name="NomRegUsuario">Nombre de Usuario</string>
+    <string name="HintDNiReg">Introduzca su DNI</string>
+    <string name="TelReg">Nº Teléfono</string>
+    <string name="EmailReg">Correo electrónico</string>
+    <string name="PasswordReg">Contraseña</string>
+    <string name="BTN_Regusuario">Enviar</string>
+    <string name="nav_logusuario">Inicio sesión usuarios</string>
+    <string name="nav_regusuario">Registro usuarios</string>
+    <string name="EmailLogusuario">Correo electrónico</string>
+    <string name="PasswordLogUsuarioText">Contraseña</string>
 </resources>

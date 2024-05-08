@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    tools:context=".ui.register.RegUsuarioFragment">
+
+    <ImageView
+        android:id="@+id/Register_icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/icon_register_2"
+        android:translationY="30dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/NomRegUsuarioText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:required="true"
+        android:translationY="160dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/NomRegUsuario"
+            android:layout_width="322dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/NomRegUsuario" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/DNIRegUsuarioText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:required="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/DNIReg"
+                android:layout_width="322dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/HintDNiReg" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TelRegUsuarioText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:required="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/TelReg"
+                android:layout_width="322dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/TelReg" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/EmailRegUsuarioText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:required="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/EmailReg"
+                android:layout_width="322dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/EmailReg" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/PasswordRegUsuarioText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:required="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/PasswordReg"
+                android:layout_width="322dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/PasswordReg" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/BTN_Regusuario"
+        android:layout_width="102dp"
+        android:layout_height="58dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/componentes"
+        android:text="@string/BTN_Regusuario"
+        android:textColor="@color/white"
+        android:translationY="250dp"
+        app:cornerRadius="10dp" />
+
+</FrameLayout>

@@ -17,5 +17,13 @@
             android:id="@+id/nav_register"
             android:title="@string/menu_register" />
 
+        <item
+            android:id="@+id/nav_regusuario"
+            android:title="@string/nav_regusuario" />
+
+        <item
+            android:id="@+id/nav_logusuario"
+            android:title="@string/nav_logusuario" />
+
     </group>
 </menu>

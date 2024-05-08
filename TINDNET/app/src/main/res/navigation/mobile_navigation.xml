@@ -23,4 +23,16 @@
         android:label="@string/menu_register"
         tools:layout="@layout/fragment_register" />
 
+    <fragment
+        android:id="@+id/nav_regusuario"
+        android:name="com.example.tindnet.ui.register.RegUsuarioFragment"
+        android:label="@string/menu_regusuario"
+        tools:layout="@layout/fragment_reg_usuario" />
+
+    <fragment
+        android:id="@+id/nav_logusuario"
+        android:name="com.example.tindnet.ui.login.LogUsuarioFragment"
+        android:label="@string/nav_logusuario"
+        tools:layout="@layout/fragment_log_usuario" />
+
 </navigation>
