@@ -3,21 +3,25 @@ package com.example.tindnet;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.tindnet.databinding.ActivityMainBinding;
+import com.google.android.material.navigation.NavigationView;
+
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
@@ -33,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
         setSupportActionBar(binding.appBarMain.toolbar);
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
@@ -43,9 +46,12 @@ public class MainActivity extends AppCompatActivity {
                 R.id.nav_login,
                 R.id.nav_register,
                 R.id.nav_regusuario,
-                R.id.nav_logusuario)
+                R.id.nav_RegEmpresa,
+                R.id.nav_logusuario,
+                R.id.nav_Tindnet)
                 .setOpenableLayout(drawer)
                 .build();
+
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
@@ -56,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 navController.navigate(R.id.nav_login);
             }
-
         });
 
         Button btnRegister = findViewById(R.id.BTNRegister);
@@ -65,9 +70,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 navController.navigate(R.id.nav_register);
             }
-
         });
-
 
         tituloTindnet = findViewById(R.id.TituloTINDNET);
 
@@ -97,9 +100,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onSupportNavigateUp() {
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        return navController.navigateUp() || super.onSupportNavigateUp();
+        if (item.getItemId() == android.R.id.home) {
+            binding.drawerLayout.openDrawer(GravityCompat.START);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public boolean onSupportNavigateUp() {
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
+                || super.onSupportNavigateUp();
+    }
 }

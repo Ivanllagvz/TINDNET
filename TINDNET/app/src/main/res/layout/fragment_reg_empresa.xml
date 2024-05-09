@@ -1,0 +1,329 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/fondo"
+    tools:context=".ui.register.RegEmpresaFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/Registerempresa_icon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/icon_register_2"
+            android:translationY="70dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/NomRegEmpresaText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:translationY="90dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/NomRegEmpresa"
+                android:layout_width="322dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/NomRegEmpresa" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/NumRegEmpresaText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:translationY="100dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/NumRegEmpresa"
+                android:layout_width="322dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/NumRegEmpresa" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/EmailegEmpresaText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:translationY="110dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/EmailRegEmpresa"
+                android:layout_width="322dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/EmailRegEmpresa" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/PasswordRegEmpresaText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:translationY="120dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/PasswordRegEmpresa"
+                android:layout_width="322dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/PasswordRegEmpresa" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/DescRegEmpresaText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:translationY="130dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/DescRegEmpresa"
+                android:layout_width="322dp"
+                android:layout_height="128dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/DescRegEmpresa" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TelRegEmpresaText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:translationY="150dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/TelRegEmpresa"
+                android:layout_width="322dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/TelRegEmpresa" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/WebRegEmpresaText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:translationY="150dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/WebRegEmpresa"
+                android:layout_width="322dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/WebRegEmpresa" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/SectorRegEmpresaText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:translationY="150dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/SectorRegEmpresa"
+                android:layout_width="322dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/SectorRegEmpresa" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/RazónRegEmpresaText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:translationY="150dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/RazónRegEmpresa"
+                android:layout_width="322dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/RazónRegEmpresa" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/HorariosRegEmpresaText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:translationY="150dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/HorariosRegEmpresa"
+                android:layout_width="322dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/HorariosRegEmpresa" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/Documentos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:translationY="160dp"
+            android:text="@string/Documentos"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/BTNDocumentos"
+            android:layout_width="165dp"
+            android:layout_height="78dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/componentes"
+            android:fontFamily="@font/montserrat"
+            android:padding="15dp"
+            android:text="@string/BTNDocumentos"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:translationY="170dp"
+            app:cornerRadius="10dp" />
+
+        <TextView
+            android:id="@+id/Imágenes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:translationY="160dp"
+            android:text="@string/Imágenes"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/BTNImágenes"
+            android:layout_width="165dp"
+            android:layout_height="78dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/componentes"
+            android:fontFamily="@font/montserrat"
+            android:padding="15dp"
+            android:text="@string/BTNImágenes"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:translationY="170dp"
+            app:cornerRadius="10dp" />
+
+        <TextView
+            android:id="@+id/Logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:translationY="180dp"
+            android:text="@string/Logo"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/BTNLogo"
+            android:layout_width="165dp"
+            android:layout_height="78dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/componentes"
+            android:fontFamily="@font/montserrat"
+            android:padding="15dp"
+            android:text="@string/BTNLogo"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:translationY="190dp"
+            app:cornerRadius="10dp" />
+
+        <Button
+            android:id="@+id/BTNRegEmpresa"
+            android:layout_width="128dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="200dp"
+            android:backgroundTint="@color/componentes"
+            android:fontFamily="@font/montserrat"
+            android:padding="15dp"
+            android:text="@string/BTN_Regusuario"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:translationY="200dp"
+            app:cornerRadius="10dp" />
+
+    </LinearLayout>
+
+</ScrollView>

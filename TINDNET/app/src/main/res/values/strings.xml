@@ -34,4 +34,22 @@
     <string name="nav_regusuario">Registro usuarios</string>
     <string name="EmailLogusuario">Correo electrónico</string>
     <string name="PasswordLogUsuarioText">Contraseña</string>
+    <string name="Tindnet">Tindnet</string>
+    <string name="Regempresa">Registro empresa</string>
+    <string name="NomRegEmpresa">Nombre de la empresa</string>
+    <string name="NumRegEmpresa">Nº Identificación fiscal</string>
+    <string name="EmailRegEmpresa">Correo electrónico</string>
+    <string name="PasswordRegEmpresa">Contraseña</string>
+    <string name="DescRegEmpresa">Descripción breve</string>
+    <string name="TelRegEmpresa">Nº Teléfono</string>
+    <string name="WebRegEmpresa">Sitio Web (Si dispone de uno)</string>
+    <string name="SectorRegEmpresa">Sector/Categoría</string>
+    <string name="RazónRegEmpresa">Razón social/Ubicación</string>
+    <string name="HorariosRegEmpresa">Horario</string>
+    <string name="Documentos">Documentos (Certificados, documentos legales, Formato PDF)</string>
+    <string name="BTNDocumentos">Subir documentos</string>
+    <string name="Imágenes">Imágenes relevantes (empresa, producto, Formato PNG/JPG)</string>
+    <string name="BTNImágenes">Subir imágenes</string>
+    <string name="Logo">Logotipo (Formato PNG)</string>
+    <string name="BTNLogo">Subir logotipo</string>
 </resources>

@@ -30,9 +30,21 @@
         tools:layout="@layout/fragment_reg_usuario" />
 
     <fragment
+        android:id="@+id/nav_RegEmpresa"
+        android:name="com.example.tindnet.ui.register.RegEmpresaFragment"
+        android:label="@string/Regempresa"
+        tools:layout="@layout/fragment_reg_empresa" />
+
+    <fragment
         android:id="@+id/nav_logusuario"
         android:name="com.example.tindnet.ui.login.LogUsuarioFragment"
         android:label="@string/nav_logusuario"
         tools:layout="@layout/fragment_log_usuario" />
+
+    <fragment
+        android:id="@+id/nav_Tindnet"
+        android:name="com.example.tindnet.ui.Tindnet.TindnetFragment"
+        android:label="@string/tindnet"
+        tools:layout="@layout/fragment_tindnet" />
 
 </navigation>

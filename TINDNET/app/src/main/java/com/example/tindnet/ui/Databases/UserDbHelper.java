@@ -1,6 +1,7 @@
 package com.example.tindnet.ui.Databases;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -31,5 +32,18 @@ public class UserDbHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL(SQL_DELETE_ENTRIES);
         onCreate(db);
+    }
+
+    public boolean checkUserCredentials(String email, String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] columns = {
+                UserContract.UserEntry._ID
+        };
+        String selection = UserContract.UserEntry.COLUMN_EMAIL + " = ?" + " AND " + UserContract.UserEntry.COLUMN_PASSWORD + " = ?";
+        String[] selectionArgs = {email, password};
+        Cursor cursor = db.query(UserContract.UserEntry.TABLE_NAME, columns, selection, selectionArgs, null, null, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count > 0;
     }
 }
