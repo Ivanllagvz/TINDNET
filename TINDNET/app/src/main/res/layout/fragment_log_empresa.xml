@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    tools:context=".ui.login.LogEmpresaFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        app:cardCornerRadius="20dp"
+        android:translationY="80dp">
+
+        <ImageView
+            android:id="@+id/Loginicon"
+            android:layout_width="121dp"
+            android:layout_height="122dp"
+            android:src="@drawable/icon_login_2" />
+
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/FiscalLogEmpresaText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:required="true"
+        android:translationY="50dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/FiscalLog"
+            android:layout_width="322dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/NumFiscal" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/EmailLogEmpresaText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:required="true"
+        android:translationY="-50dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/EmailLog"
+            android:layout_width="322dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/EmailLogusuario" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/PasswordLogEmpresaText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:required="true"
+        android:translationY="150dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/PasswordLog"
+            android:layout_width="322dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/PasswordLogUsuarioText"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/BTN_LogEmpresa"
+        android:layout_width="102dp"
+        android:layout_height="58dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/componentes"
+        android:text="@string/BTN_Regusuario"
+        android:textColor="@color/white"
+        android:translationY="250dp"
+        app:cornerRadius="10dp" />
+
+</FrameLayout>

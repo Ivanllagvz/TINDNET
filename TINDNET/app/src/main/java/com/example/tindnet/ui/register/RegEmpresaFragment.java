@@ -27,27 +27,25 @@ import java.util.Locale;
 
 public class RegEmpresaFragment extends Fragment {
 
-    // Variables para los campos de entrada de texto
     private TextInputEditText nomEmpresaEditText;
     private TextInputEditText numEmpresaEditText;
+    private TextInputEditText passwordEmpresaEditText;
     private TextInputEditText emailEmpresaEditText;
     private TextInputEditText descEmpresaEditText;
+    private TextInputEditText telEmpresaEditText;
     private TextInputEditText webEmpresaEditText;
     private TextInputEditText sectorEmpresaEditText;
     private TextInputEditText razonSocialEditText;
     private TextInputEditText horariosEditText;
 
-    // Variables para las URIs de los archivos seleccionados
     private Uri documentoUri;
     private Uri imagenUri;
     private Uri logoUri;
 
-    // Constantes para identificar los resultados de las actividades
     private static final int REQUEST_PDF = 1;
     private static final int REQUEST_IMAGEN = 2;
     private static final int REQUEST_LOGO = 3;
 
-    // Variable para la base de datos SQLite
     private SQLiteDatabase mDatabase;
 
     @Nullable
@@ -61,7 +59,9 @@ public class RegEmpresaFragment extends Fragment {
         nomEmpresaEditText = view.findViewById(R.id.NomRegEmpresa);
         numEmpresaEditText = view.findViewById(R.id.NumRegEmpresa);
         emailEmpresaEditText = view.findViewById(R.id.EmailRegEmpresa);
+        passwordEmpresaEditText = view.findViewById(R.id.PasswordRegEmpresa);
         descEmpresaEditText = view.findViewById(R.id.DescRegEmpresa);
+        telEmpresaEditText = view.findViewById(R.id.TelRegEmpresa);
         webEmpresaEditText = view.findViewById(R.id.WebRegEmpresa);
         sectorEmpresaEditText = view.findViewById(R.id.SectorRegEmpresa);
         razonSocialEditText = view.findViewById(R.id.RazónRegEmpresa);
@@ -98,12 +98,14 @@ public class RegEmpresaFragment extends Fragment {
                 String nombre = nomEmpresaEditText.getText().toString();
                 String numero = numEmpresaEditText.getText().toString();
                 String email = emailEmpresaEditText.getText().toString();
+                String password = passwordEmpresaEditText.getText().toString();
                 String descripcion = descEmpresaEditText.getText().toString();
+                String telefono = telEmpresaEditText.getText().toString();
                 String web = webEmpresaEditText.getText().toString();
                 String sector = sectorEmpresaEditText.getText().toString();
                 String razonSocial = razonSocialEditText.getText().toString();
                 String horarios = horariosEditText.getText().toString();
-                insertEmpresa(nombre, numero, email, descripcion, web, sector, razonSocial, horarios);
+                insertEmpresa(nombre, numero, email, password, descripcion, telefono, web, sector, razonSocial, horarios);
             }
         });
 
@@ -146,7 +148,7 @@ public class RegEmpresaFragment extends Fragment {
         }
     }
 
-    private void insertEmpresa(String nombre, String numero, String email, String descripcion, String web, String sector, String razonSocial, String horarios) {
+    private void insertEmpresa(String nombre, String numero, String email, String password, String descripcion, String telefono, String web, String sector, String razonSocial, String horarios) {
         if (nombre.isEmpty() || numero.isEmpty() || email.isEmpty() || descripcion.isEmpty() || web.isEmpty() || sector.isEmpty() || razonSocial.isEmpty() || horarios.isEmpty()) {
             Toast.makeText(getActivity(), "Debe completar todos los campos", Toast.LENGTH_SHORT).show();
             return;
@@ -156,7 +158,9 @@ public class RegEmpresaFragment extends Fragment {
         contentValues.put(EmpresaContract.EmpresaEntry.COLUMN_NOMBRE, nombre);
         contentValues.put(EmpresaContract.EmpresaEntry.COLUMN_NUMERO, numero);
         contentValues.put(EmpresaContract.EmpresaEntry.COLUMN_EMAIL, email);
+        contentValues.put(EmpresaContract.EmpresaEntry.COLUMN_PASSWORD, password);
         contentValues.put(EmpresaContract.EmpresaEntry.COLUMN_DESCRIPCION, descripcion);
+        contentValues.put(EmpresaContract.EmpresaEntry.COLUMN_TELEFONO, telefono);
         contentValues.put(EmpresaContract.EmpresaEntry.COLUMN_WEB, web);
         contentValues.put(EmpresaContract.EmpresaEntry.COLUMN_SECTOR, sector);
         contentValues.put(EmpresaContract.EmpresaEntry.COLUMN_RAZON_SOCIAL, razonSocial);

@@ -52,4 +52,7 @@
     <string name="BTNImágenes">Subir imágenes</string>
     <string name="Logo">Logotipo (Formato PNG)</string>
     <string name="BTNLogo">Subir logotipo</string>
+    <string name="logempresa">Inicio sesión empresa</string>
+    <string name="NumFiscal">Nº Identificación fiscal</string>
+    <string name="TindnetEmpresa">Tindnet Empresa</string>
 </resources>

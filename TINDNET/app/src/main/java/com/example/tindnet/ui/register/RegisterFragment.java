@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.tindnet.R;
@@ -23,6 +25,14 @@ public class RegisterFragment extends Fragment {
             public void onClick(View v) {
                 NavHostFragment.findNavController(RegisterFragment.this)
                         .navigate(R.id.nav_regusuario);
+            }
+        });
+
+        Button btnRegisterEmpresa = root.findViewById(R.id.BTNRegisterEmpresa);
+        btnRegisterEmpresa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.nav_RegEmpresa);
             }
         });
 

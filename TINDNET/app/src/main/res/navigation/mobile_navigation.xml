@@ -42,9 +42,21 @@
         tools:layout="@layout/fragment_log_usuario" />
 
     <fragment
+        android:id="@+id/nav_logempresa"
+        android:name="com.example.tindnet.ui.login.LogEmpresaFragment"
+        android:label="@string/logempresa"
+        tools:layout="@layout/fragment_log_empresa" />
+
+    <fragment
         android:id="@+id/nav_Tindnet"
         android:name="com.example.tindnet.ui.Tindnet.TindnetFragment"
         android:label="@string/tindnet"
         tools:layout="@layout/fragment_tindnet" />
+
+    <fragment
+        android:id="@+id/nav_TindnetEmpresa"
+        android:name="com.example.tindnet.ui.Tindnet.TindnetEmpresaFragment"
+        android:label="@string/TindnetEmpresa"
+        tools:layout="@layout/fragment_tindnet_empresa" />
 
 </navigation>

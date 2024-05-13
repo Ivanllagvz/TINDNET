@@ -1,0 +1,51 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/image_empresa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/nombre_empresa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre de la Empresa" />
+
+    <TextView
+        android:id="@+id/descripcion_empresa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descripción de la Empresa" />
+
+    <TextView
+        android:id="@+id/web_empresa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Web de la Empresa" />
+
+    <TextView
+        android:id="@+id/sector_empresa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sector de la Empresa" />
+
+    <TextView
+        android:id="@+id/razon_social_empresa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Razón social/Ubicación de la Empresa" />
+
+    <TextView
+        android:id="@+id/horarios_empresa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Horarios de la Empresa" />
+
+
+
+</LinearLayout>

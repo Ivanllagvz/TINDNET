@@ -27,6 +27,14 @@ public class LoginFragment extends Fragment {
             }
         });
 
+        Button btnLoginEmpresa = root.findViewById(R.id.BTNLoginEmpresa);
+        btnLoginEmpresa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.nav_logempresa);
+            }
+        });
+
         return root;
     }
 }

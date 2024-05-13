@@ -11,7 +11,9 @@ public final class EmpresaContract {
         public static final String COLUMN_NOMBRE = "nombre";
         public static final String COLUMN_NUMERO = "numero";
         public static final String COLUMN_EMAIL = "email";
+        public static final String COLUMN_PASSWORD = "password";
         public static final String COLUMN_DESCRIPCION = "descripcion";
+        public static final String COLUMN_TELEFONO = "telefono";
         public static final String COLUMN_WEB = "web";
         public static final String COLUMN_SECTOR = "sector";
         public static final String COLUMN_RAZON_SOCIAL = "razon_social";
