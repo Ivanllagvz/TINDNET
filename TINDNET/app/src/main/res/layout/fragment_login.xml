@@ -10,8 +10,8 @@
 
     <TextView
         android:id="@+id/instruccion"
-        android:layout_width="356dp"
-        android:layout_height="102dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
@@ -27,8 +27,8 @@
 
     <Button
         android:id="@+id/BTNLoginUsuario"
-        android:layout_width="179dp"
-        android:layout_height="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
@@ -45,8 +45,8 @@
 
     <Button
         android:id="@+id/BTNLoginEmpresa"
-        android:layout_width="179dp"
-        android:layout_height="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"

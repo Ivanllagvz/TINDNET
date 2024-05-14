@@ -6,15 +6,18 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import com.example.tindnet.R;
 import com.example.tindnet.ui.Databases.EmpresaContract;
@@ -24,6 +27,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Objects;
 
 public class RegEmpresaFragment extends Fragment {
 
@@ -41,6 +45,7 @@ public class RegEmpresaFragment extends Fragment {
     private Uri documentoUri;
     private Uri imagenUri;
     private Uri logoUri;
+    private ImageView imageView;
 
     private static final int REQUEST_PDF = 1;
     private static final int REQUEST_IMAGEN = 2;
@@ -95,16 +100,16 @@ public class RegEmpresaFragment extends Fragment {
         regEmpresaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nombre = nomEmpresaEditText.getText().toString();
-                String numero = numEmpresaEditText.getText().toString();
-                String email = emailEmpresaEditText.getText().toString();
-                String password = passwordEmpresaEditText.getText().toString();
-                String descripcion = descEmpresaEditText.getText().toString();
-                String telefono = telEmpresaEditText.getText().toString();
-                String web = webEmpresaEditText.getText().toString();
-                String sector = sectorEmpresaEditText.getText().toString();
-                String razonSocial = razonSocialEditText.getText().toString();
-                String horarios = horariosEditText.getText().toString();
+                String nombre = Objects.requireNonNull(nomEmpresaEditText.getText()).toString();
+                String numero = Objects.requireNonNull(numEmpresaEditText.getText()).toString();
+                String email = Objects.requireNonNull(emailEmpresaEditText.getText()).toString();
+                String password = Objects.requireNonNull(passwordEmpresaEditText.getText()).toString();
+                String descripcion = Objects.requireNonNull(descEmpresaEditText.getText()).toString();
+                String telefono = Objects.requireNonNull(telEmpresaEditText.getText()).toString();
+                String web = Objects.requireNonNull(webEmpresaEditText.getText()).toString();
+                String sector = Objects.requireNonNull(sectorEmpresaEditText.getText()).toString();
+                String razonSocial = Objects.requireNonNull(razonSocialEditText.getText()).toString();
+                String horarios = Objects.requireNonNull(horariosEditText.getText()).toString();
                 insertEmpresa(nombre, numero, email, password, descripcion, telefono, web, sector, razonSocial, horarios);
             }
         });
@@ -133,16 +138,19 @@ public class RegEmpresaFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == getActivity().RESULT_OK) {
             if (requestCode == REQUEST_PDF) {
-                if (data != null) {
+                if (data != null && data.getData() != null) {
                     documentoUri = data.getData();
+                    Log.d("RegEmpresaFragment", "Documento URI: " + documentoUri.toString());
                 }
             } else if (requestCode == REQUEST_IMAGEN) {
-                if (data != null) {
+                if (data != null && data.getData() != null) {
                     imagenUri = data.getData();
+                    Log.d("RegEmpresaFragment", "Imagen URI: " + imagenUri.toString());
                 }
             } else if (requestCode == REQUEST_LOGO) {
-                if (data != null) {
+                if (data != null && data.getData() != null) {
                     logoUri = data.getData();
+                    Log.d("RegEmpresaFragment", "Logo URI: " + logoUri.toString());
                 }
             }
         }
@@ -166,12 +174,23 @@ public class RegEmpresaFragment extends Fragment {
         contentValues.put(EmpresaContract.EmpresaEntry.COLUMN_RAZON_SOCIAL, razonSocial);
         contentValues.put(EmpresaContract.EmpresaEntry.COLUMN_HORARIOS, horarios);
 
+        if (documentoUri != null) {
+            contentValues.put(EmpresaContract.EmpresaEntry.COLUMN_DOCUMENTO_URI, documentoUri.toString());
+        }
+        if (imagenUri != null) {
+            contentValues.put(EmpresaContract.EmpresaEntry.COLUMN_IMAGEN_URI, imagenUri.toString());
+        }
+        if (logoUri != null) {
+            contentValues.put(EmpresaContract.EmpresaEntry.COLUMN_LOGO_URI, logoUri.toString());
+        }
+
         long newRowId = mDatabase.insert(EmpresaContract.EmpresaEntry.TABLE_NAME, null, contentValues);
 
         if (newRowId == -1) {
             Toast.makeText(getActivity(), "Error al registrar la empresa", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(getActivity(), "Empresa registrada con éxito", Toast.LENGTH_SHORT).show();
+            Navigation.findNavController(requireView()).navigate(R.id.nav_logempresa);
         }
     }
 

@@ -1,51 +1,80 @@
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/fondo"
+    android:layout_margin="16dp"
+    android:elevation="4dp"
+    android:padding="16dp">
 
     <ImageView
         android:id="@+id/image_empresa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logo" />
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"/>
 
     <TextView
         android:id="@+id/nombre_empresa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nombre de la Empresa" />
+        android:text="Nombre de la Empresa"
+        android:textColor="@color/white"
+        android:fontFamily="arial"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp" />
 
     <TextView
         android:id="@+id/descripcion_empresa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:fontFamily="arial"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="4dp"
         android:text="Descripción de la Empresa" />
 
     <TextView
         android:id="@+id/web_empresa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:fontFamily="arial"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="4dp"
         android:text="Web de la Empresa" />
 
     <TextView
         android:id="@+id/sector_empresa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:fontFamily="arial"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="4dp"
         android:text="Sector de la Empresa" />
 
     <TextView
         android:id="@+id/razon_social_empresa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:fontFamily="arial"
+        android:textSize="16sp"
+        android:textStyle="bold"
         android:text="Razón social/Ubicación de la Empresa" />
 
     <TextView
         android:id="@+id/horarios_empresa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:fontFamily="arial"
+        android:textSize="16sp"
+        android:textStyle="bold"
         android:text="Horarios de la Empresa" />
-
-
 
 </LinearLayout>

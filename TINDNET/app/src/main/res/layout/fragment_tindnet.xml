@@ -6,9 +6,10 @@
     android:background="@color/fondo"
     android:orientation="vertical">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_empresas"
+    <com.lorentzos.flingswipe.SwipeFlingAdapterView
+        android:id="@+id/swipe_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
 </LinearLayout>
+

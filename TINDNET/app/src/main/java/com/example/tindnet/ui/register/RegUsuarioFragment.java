@@ -124,7 +124,7 @@ public class RegUsuarioFragment extends Fragment {
     }
 
     private void navigateToLoginFragment() {
-        Navigation.findNavController(requireView()).navigate(R.id.nav_login);
+        Navigation.findNavController(requireView()).navigate(R.id.nav_logusuario);
     }
 
 }

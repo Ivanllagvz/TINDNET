@@ -33,6 +33,7 @@ android {
 
 dependencies {
 
+    implementation (libs.library)
     implementation (libs.glide)
     implementation(libs.appcompat)
     implementation(libs.material)

@@ -1,18 +1,23 @@
 package com.example.tindnet.ui.Databases;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.annotation.Nullable;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.transition.Transition;
+import com.bumptech.glide.request.target.CustomTarget;
 import com.example.tindnet.R;
 import java.util.List;
 
-public class EmpresaAdapter extends RecyclerView.Adapter<EmpresaAdapter.EmpresaViewHolder> {
+public class EmpresaAdapter extends BaseAdapter {
 
     private Context context;
     private List<Empresa> empresaList;
@@ -22,59 +27,67 @@ public class EmpresaAdapter extends RecyclerView.Adapter<EmpresaAdapter.EmpresaV
         this.empresaList = empresaList;
     }
 
-    @NonNull
     @Override
-    public EmpresaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_empresa, parent, false);
-        return new EmpresaViewHolder(view);
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull EmpresaViewHolder holder, int position) {
-        Empresa empresa = empresaList.get(position);
-        holder.bind(empresa);
-    }
-
-    @Override
-    public int getItemCount() {
+    public int getCount() {
         return empresaList.size();
     }
 
-    public class EmpresaViewHolder extends RecyclerView.ViewHolder {
+    @Override
+    public Object getItem(int position) {
+        return empresaList.get(position);
+    }
 
-        private ImageView imageView;
-        private TextView nombreTextView;
-        private TextView descripcionTextView;
-        private TextView webTextView;
-        private TextView sectorTextView;
-        private TextView razonSocialTextView;
-        private TextView horariosTextView;
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
 
-        public EmpresaViewHolder(@NonNull View itemView) {
-            super(itemView);
-            imageView = itemView.findViewById(R.id.image_empresa);
-            nombreTextView = itemView.findViewById(R.id.nombre_empresa);
-            descripcionTextView = itemView.findViewById(R.id.descripcion_empresa);
-            webTextView = itemView.findViewById(R.id.web_empresa);
-            sectorTextView = itemView.findViewById(R.id.sector_empresa);
-            razonSocialTextView = itemView.findViewById(R.id.razon_social_empresa);
-            horariosTextView = itemView.findViewById(R.id.horarios_empresa);
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        if (convertView == null) {
+            convertView = LayoutInflater.from(context).inflate(R.layout.item_empresa, parent, false);
         }
 
-        public void bind(Empresa empresa) {
-            nombreTextView.setText(empresa.getNombre());
-            descripcionTextView.setText(empresa.getDescripcion());
-            webTextView.setText(empresa.getWeb());
-            sectorTextView.setText(empresa.getSector());
-            razonSocialTextView.setText(empresa.getRazonSocial());
-            horariosTextView.setText(empresa.getHorarios());
+        ImageView imageView = convertView.findViewById(R.id.image_empresa);
+        TextView nombreTextView = convertView.findViewById(R.id.nombre_empresa);
+        TextView descripcionTextView = convertView.findViewById(R.id.descripcion_empresa);
+        TextView webTextView = convertView.findViewById(R.id.web_empresa);
+        TextView sectorTextView = convertView.findViewById(R.id.sector_empresa);
+        TextView razonSocialTextView = convertView.findViewById(R.id.razon_social_empresa);
+        TextView horariosTextView = convertView.findViewById(R.id.horarios_empresa);
 
+        Empresa empresa = empresaList.get(position);
 
-            Glide.with(context)
-                    .load(empresa.getImagenUri())
-                    .placeholder(R.drawable.logo)
-                    .error(R.drawable.logo_webstyles)
-                    .into(imageView);
-        }
+        nombreTextView.setText(empresa.getNombre());
+        descripcionTextView.setText(empresa.getDescripcion());
+        webTextView.setText(empresa.getWeb());
+        sectorTextView.setText(empresa.getSector());
+        razonSocialTextView.setText(empresa.getRazonSocial());
+        horariosTextView.setText(empresa.getHorarios());
+
+        Glide.with(context)
+                .load(empresa.getImagenUri())
+                .placeholder(R.drawable.logo)
+                .error(R.drawable.logo_webstyles)
+                .into(new CustomTarget<Drawable>() {
+                    @Override
+                    public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
+                        imageView.setImageDrawable(resource);
+                    }
+
+                    @Override
+                    public void onLoadFailed(@Nullable Drawable errorDrawable) {
+                        Log.e("Glide", "Failed to load image: " + empresa.getImagenUri());
+                        super.onLoadFailed(errorDrawable);
+                        imageView.setImageDrawable(errorDrawable);
+                    }
+
+                    @Override
+                    public void onLoadCleared(@Nullable Drawable placeholder) {
+                        imageView.setImageDrawable(placeholder);
+                    }
+                });
+
+        return convertView;
     }
 }

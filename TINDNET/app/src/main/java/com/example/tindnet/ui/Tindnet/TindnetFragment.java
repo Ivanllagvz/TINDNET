@@ -4,43 +4,66 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import com.example.tindnet.R;
 import com.example.tindnet.ui.Databases.Empresa;
 import com.example.tindnet.ui.Databases.EmpresaAdapter;
 import com.example.tindnet.ui.Databases.EmpresaDbHelper;
-import java.util.ArrayList;
+import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 import java.util.List;
 
 public class TindnetFragment extends Fragment {
 
-    private RecyclerView recyclerView;
-    private EmpresaAdapter empresaAdapter;
-    private List<Empresa> empresaList;
-    private EmpresaDbHelper dbHelper;
+    private SwipeFlingAdapterView swipeFlingAdapterView;
+    private EmpresaAdapter adapter;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tindnet, container, false);
 
-        recyclerView = view.findViewById(R.id.recycler_empresas);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
-        empresaList = new ArrayList<>();
-        dbHelper = new EmpresaDbHelper(getActivity());
+        swipeFlingAdapterView = view.findViewById(R.id.swipe_view);
 
-        cargarEmpresas();
+        EmpresaDbHelper dbHelper = new EmpresaDbHelper(getContext());
+        List<Empresa> empresaList = dbHelper.getAllEmpresas();
+        adapter = new EmpresaAdapter(getContext(), empresaList);
+        swipeFlingAdapterView.setAdapter(adapter);
+
+        swipeFlingAdapterView.setFlingListener(new SwipeFlingAdapterView.onFlingListener() {
+            @Override
+            public void removeFirstObjectInAdapter() {
+                empresaList.remove(0);
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onLeftCardExit(Object dataObject) {
+                // Acción cuando se desliza a la izquierda
+            }
+
+            @Override
+            public void onRightCardExit(Object dataObject) {
+                // Acción cuando se desliza a la derecha
+            }
+
+            @Override
+            public void onAdapterAboutToEmpty(int itemsInAdapter) {
+                // Acción cuando el adaptador está a punto de quedarse vacío
+            }
+
+            @Override
+            public void onScroll(float scrollProgressPercent) {
+                // Acción durante el desplazamiento
+            }
+        });
+
+        swipeFlingAdapterView.setOnItemClickListener((itemPosition, dataObject) -> {
+            // Acción cuando se hace clic en una tarjeta
+        });
 
         return view;
-    }
-
-    private void cargarEmpresas() {
-        empresaList = dbHelper.getAllEmpresas();
-        empresaAdapter = new EmpresaAdapter(getActivity(), empresaList);
-        recyclerView.setAdapter(empresaAdapter);
     }
 }
