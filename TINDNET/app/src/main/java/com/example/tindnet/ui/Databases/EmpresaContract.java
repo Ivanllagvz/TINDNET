@@ -20,6 +20,10 @@ public final class EmpresaContract {
         public static final String COLUMN_HORARIOS = "horarios";
         public static final String COLUMN_DOCUMENTO_URI = "documento_uri";
         public static final String COLUMN_IMAGEN_URI = "imagen_uri";
+        public static final String COLUMN_IMAGEN_URI_2 = "imagen_uri_2";
+        public static final String COLUMN_IMAGEN_URI_3 = "imagen_uri_3";
+        public static final String COLUMN_IMAGEN_URI_4 = "imagen_uri_4";
+        public static final String COLUMN_IMAGEN_URI_5 = "imagen_uri_5";
         public static final String COLUMN_LOGO_URI = "logo_uri";
     }
 }

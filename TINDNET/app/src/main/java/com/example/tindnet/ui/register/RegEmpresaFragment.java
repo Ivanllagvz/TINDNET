@@ -11,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -24,9 +23,8 @@ import com.example.tindnet.ui.Databases.EmpresaContract;
 import com.example.tindnet.ui.Databases.EmpresaDbHelper;
 import com.google.android.material.textfield.TextInputEditText;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class RegEmpresaFragment extends Fragment {
@@ -43,9 +41,8 @@ public class RegEmpresaFragment extends Fragment {
     private TextInputEditText horariosEditText;
 
     private Uri documentoUri;
-    private Uri imagenUri;
+    private List<Uri> imagenUris;
     private Uri logoUri;
-    private ImageView imageView;
 
     private static final int REQUEST_PDF = 1;
     private static final int REQUEST_IMAGEN = 2;
@@ -71,6 +68,8 @@ public class RegEmpresaFragment extends Fragment {
         sectorEmpresaEditText = view.findViewById(R.id.SectorRegEmpresa);
         razonSocialEditText = view.findViewById(R.id.RazónRegEmpresa);
         horariosEditText = view.findViewById(R.id.HorariosRegEmpresa);
+
+        imagenUris = new ArrayList<>();
 
         Button btnDocumentos = view.findViewById(R.id.BTNDocumentos);
         btnDocumentos.setOnClickListener(new View.OnClickListener() {
@@ -125,6 +124,7 @@ public class RegEmpresaFragment extends Fragment {
 
     private void seleccionarImagen() {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
         startActivityForResult(intent, REQUEST_IMAGEN);
     }
 
@@ -143,9 +143,18 @@ public class RegEmpresaFragment extends Fragment {
                     Log.d("RegEmpresaFragment", "Documento URI: " + documentoUri.toString());
                 }
             } else if (requestCode == REQUEST_IMAGEN) {
-                if (data != null && data.getData() != null) {
-                    imagenUri = data.getData();
-                    Log.d("RegEmpresaFragment", "Imagen URI: " + imagenUri.toString());
+                if (data != null) {
+                    if (data.getClipData() != null) {
+                        int count = data.getClipData().getItemCount();
+                        for (int i = 0; i < count; i++) {
+                            Uri imageUri = data.getClipData().getItemAt(i).getUri();
+                            imagenUris.add(imageUri);
+                        }
+                    } else if (data.getData() != null) {
+                        Uri imageUri = data.getData();
+                        imagenUris.add(imageUri);
+                    }
+                    Log.d("RegEmpresaFragment", "Imagen URIs: " + imagenUris.toString());
                 }
             } else if (requestCode == REQUEST_LOGO) {
                 if (data != null && data.getData() != null) {
@@ -177,9 +186,27 @@ public class RegEmpresaFragment extends Fragment {
         if (documentoUri != null) {
             contentValues.put(EmpresaContract.EmpresaEntry.COLUMN_DOCUMENTO_URI, documentoUri.toString());
         }
-        if (imagenUri != null) {
-            contentValues.put(EmpresaContract.EmpresaEntry.COLUMN_IMAGEN_URI, imagenUri.toString());
+
+        for (int i = 0; i < imagenUris.size(); i++) {
+            switch (i) {
+                case 0:
+                    contentValues.put(EmpresaContract.EmpresaEntry.COLUMN_IMAGEN_URI, imagenUris.get(i).toString());
+                    break;
+                case 1:
+                    contentValues.put(EmpresaContract.EmpresaEntry.COLUMN_IMAGEN_URI_2, imagenUris.get(i).toString());
+                    break;
+                case 2:
+                    contentValues.put(EmpresaContract.EmpresaEntry.COLUMN_IMAGEN_URI_3, imagenUris.get(i).toString());
+                    break;
+                case 3:
+                    contentValues.put(EmpresaContract.EmpresaEntry.COLUMN_IMAGEN_URI_4, imagenUris.get(i).toString());
+                    break;
+                case 4:
+                    contentValues.put(EmpresaContract.EmpresaEntry.COLUMN_IMAGEN_URI_5, imagenUris.get(i).toString());
+                    break;
+            }
         }
+
         if (logoUri != null) {
             contentValues.put(EmpresaContract.EmpresaEntry.COLUMN_LOGO_URI, logoUri.toString());
         }

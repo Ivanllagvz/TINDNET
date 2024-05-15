@@ -41,27 +41,22 @@ public class TindnetFragment extends Fragment {
 
             @Override
             public void onLeftCardExit(Object dataObject) {
-                // Acción cuando se desliza a la izquierda
             }
 
             @Override
             public void onRightCardExit(Object dataObject) {
-                // Acción cuando se desliza a la derecha
             }
 
             @Override
             public void onAdapterAboutToEmpty(int itemsInAdapter) {
-                // Acción cuando el adaptador está a punto de quedarse vacío
             }
 
             @Override
             public void onScroll(float scrollProgressPercent) {
-                // Acción durante el desplazamiento
             }
         });
 
         swipeFlingAdapterView.setOnItemClickListener((itemPosition, dataObject) -> {
-            // Acción cuando se hace clic en una tarjeta
         });
 
         return view;

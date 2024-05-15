@@ -29,6 +29,10 @@ public class EmpresaDbHelper extends SQLiteOpenHelper {
                     EmpresaContract.EmpresaEntry.COLUMN_HORARIOS + " TEXT," +
                     EmpresaContract.EmpresaEntry.COLUMN_DOCUMENTO_URI + " TEXT," +
                     EmpresaContract.EmpresaEntry.COLUMN_IMAGEN_URI + " TEXT," +
+                    EmpresaContract.EmpresaEntry.COLUMN_IMAGEN_URI_2 + " TEXT," +
+                    EmpresaContract.EmpresaEntry.COLUMN_IMAGEN_URI_3 + " TEXT," +
+                    EmpresaContract.EmpresaEntry.COLUMN_IMAGEN_URI_4 + " TEXT," +
+                    EmpresaContract.EmpresaEntry.COLUMN_IMAGEN_URI_5 + " TEXT," +
                     EmpresaContract.EmpresaEntry.COLUMN_LOGO_URI + " TEXT)";
 
     private static final String SQL_DELETE_ENTRIES =
@@ -103,6 +107,10 @@ public class EmpresaDbHelper extends SQLiteOpenHelper {
             String razonSocial = cursor.getString(cursor.getColumnIndexOrThrow(EmpresaContract.EmpresaEntry.COLUMN_RAZON_SOCIAL));
             String horarios = cursor.getString(cursor.getColumnIndexOrThrow(EmpresaContract.EmpresaEntry.COLUMN_HORARIOS));
             String imagenUri = cursor.getString(cursor.getColumnIndexOrThrow(EmpresaContract.EmpresaEntry.COLUMN_IMAGEN_URI));
+            String imagenUri2 = cursor.getString(cursor.getColumnIndexOrThrow(EmpresaContract.EmpresaEntry.COLUMN_IMAGEN_URI_2));
+            String imagenUri3 = cursor.getString(cursor.getColumnIndexOrThrow(EmpresaContract.EmpresaEntry.COLUMN_IMAGEN_URI_3));
+            String imagenUri4 = cursor.getString(cursor.getColumnIndexOrThrow(EmpresaContract.EmpresaEntry.COLUMN_IMAGEN_URI_4));
+            String imagenUri5 = cursor.getString(cursor.getColumnIndexOrThrow(EmpresaContract.EmpresaEntry.COLUMN_IMAGEN_URI_5));
             Empresa empresa = new Empresa(nombre, descripcion, web, sector, razonSocial, horarios, imagenUri);
             empresas.add(empresa);
         }
