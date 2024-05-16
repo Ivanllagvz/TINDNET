@@ -40,5 +40,9 @@
             android:id="@+id/nav_TindnetEmpresa"
             android:title="@string/TindnetEmpresa" />
 
+        <item
+            android:id="@+id/nav_Favoritos"
+            android:title="@string/FavoritosFragment" />
+
     </group>
 </menu>

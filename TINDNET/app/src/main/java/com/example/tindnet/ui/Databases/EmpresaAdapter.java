@@ -11,10 +11,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.transition.Transition;
 import com.bumptech.glide.request.target.CustomTarget;
 import com.example.tindnet.R;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class EmpresaAdapter extends BaseAdapter {
@@ -48,7 +54,7 @@ public class EmpresaAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(context).inflate(R.layout.item_empresa, parent, false);
         }
 
-        ImageView imageView = convertView.findViewById(R.id.image_empresa);
+        RecyclerView recyclerView = convertView.findViewById(R.id.recycler_view_images);
         TextView nombreTextView = convertView.findViewById(R.id.nombre_empresa);
         TextView descripcionTextView = convertView.findViewById(R.id.descripcion_empresa);
         TextView webTextView = convertView.findViewById(R.id.web_empresa);
@@ -65,28 +71,14 @@ public class EmpresaAdapter extends BaseAdapter {
         razonSocialTextView.setText(empresa.getRazonSocial());
         horariosTextView.setText(empresa.getHorarios());
 
-        Glide.with(context)
-                .load(empresa.getImagenUri())
-                .placeholder(R.drawable.logo)
-                .error(R.drawable.logo_webstyles)
-                .into(new CustomTarget<Drawable>() {
-                    @Override
-                    public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
-                        imageView.setImageDrawable(resource);
-                    }
+        Log.d("EmpresaAdapter", "Empresa: " + empresa.getNombre());
+        for (String uri : empresa.getImagenUris()) {
+            Log.d("EmpresaAdapter", "Imagen URI: " + uri);
+        }
 
-                    @Override
-                    public void onLoadFailed(@Nullable Drawable errorDrawable) {
-                        Log.e("Glide", "Failed to load image: " + empresa.getImagenUri());
-                        super.onLoadFailed(errorDrawable);
-                        imageView.setImageDrawable(errorDrawable);
-                    }
-
-                    @Override
-                    public void onLoadCleared(@Nullable Drawable placeholder) {
-                        imageView.setImageDrawable(placeholder);
-                    }
-                });
+        ImageRecyclerAdapter imageRecyclerAdapter = new ImageRecyclerAdapter(context, empresa.getImagenUris());
+        recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false));
+        recyclerView.setAdapter(imageRecyclerAdapter);
 
         return convertView;
     }

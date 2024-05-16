@@ -2,12 +2,12 @@ package com.example.tindnet.ui.Databases;
 
 import android.provider.BaseColumns;
 
-public final class EmpresaContract {
+public final class FavoritosContract {
 
-    private EmpresaContract() {}
+    private FavoritosContract() {}
 
-    public static class EmpresaEntry implements BaseColumns {
-        public static final String TABLE_NAME = "Empresa";
+    public static class FavoritosEntry implements BaseColumns {
+        public static final String TABLE_NAME = "Favoritos";
         public static final String COLUMN_NOMBRE = "nombre";
         public static final String COLUMN_NUMERO = "numero";
         public static final String COLUMN_EMAIL = "email";

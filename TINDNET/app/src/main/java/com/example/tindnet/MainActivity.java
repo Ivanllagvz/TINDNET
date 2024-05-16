@@ -49,7 +49,8 @@ public class MainActivity extends AppCompatActivity {
                 R.id.nav_logusuario,
                 R.id.nav_logempresa,
                 R.id.nav_Tindnet,
-                R.id.nav_TindnetEmpresa)
+                R.id.nav_TindnetEmpresa,
+                R.id.nav_Favoritos)
                 .setOpenableLayout(drawer)
                 .build();
 
